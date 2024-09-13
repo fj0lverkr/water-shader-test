@@ -6,8 +6,8 @@
 
 [node name="Water" type="Sprite2D"]
 material = ExtResource("2_uy6sh")
-position = Vector2(579.5, 329.5)
-scale = Vector2(8.99219, 5.05469)
+position = Vector2(574, 322.5)
+scale = Vector2(9.17188, 5.16406)
 texture = ExtResource("2_jp5fx")
 script = ExtResource("1_8qwi1")
 
