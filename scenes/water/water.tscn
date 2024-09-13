@@ -10,3 +10,5 @@ script = ExtResource("1_8qwi1")
 offset_right = 236.0
 offset_bottom = 157.0
 texture = ExtResource("1_61rgm")
+
+[connection signal="item_rect_changed" from="TextureRect" to="." method="_on_texture_rect_item_rect_changed"]
