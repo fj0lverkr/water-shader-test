@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://upefgsgpa3a4"
-path="res://.godot/imported/clear-sea-water-32x32.png-a7f6cfe52b86710bdf31d0cc7c758a7d.ctex"
+uid="uid://bfusduwcxbjqq"
+path="res://.godot/imported/clear-sea-water-128x128.png-c0392222bfe512eedc5c28b2a9af3069.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/clear-sea-water-32x32.png"
-dest_files=["res://.godot/imported/clear-sea-water-32x32.png-a7f6cfe52b86710bdf31d0cc7c758a7d.ctex"]
+source_file="res://assets/textures/clear-sea-water-128x128.png"
+dest_files=["res://.godot/imported/clear-sea-water-128x128.png-c0392222bfe512eedc5c28b2a9af3069.ctex"]
 
 [params]
 

@@ -1,5 +1,9 @@
 @tool
-extends Node2D
+extends Sprite2D
 
-func _on_texture_rect_item_rect_changed():
-	pass # Replace with function body.
+const RATIO: String = "aspect_ratio"
+
+
+func _on_item_rect_changed() -> void:
+	material.set_shader_parameter(RATIO, scale.y / scale.x)
+	$Label.text = material.get_shader_parameter(RATIO)

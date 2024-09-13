@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dw7v8w3o1grbg"]
+
+[ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="1_iwnn8"]
+
+[resource]
+shader = ExtResource("1_iwnn8")
+shader_parameter/tiled_factor = Vector2(4, 4)
+shader_parameter/aspect_ratio = 0.608295
+shader_parameter/amplitude = Vector2(0.02, 0.01)
+shader_parameter/offset_factor = Vector2(4, 2)
+shader_parameter/time_scale = Vector2(1, 1)
