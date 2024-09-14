@@ -50,6 +50,4 @@ func _on_item_rect_changed() -> void:
 
 
 func _on_export_value_changed(param_name: String, value: Vector2) -> void:
-	print(material.get_shader_parameter(param_name))
 	material.set_shader_parameter(param_name, value)
-	print(material.get_shader_parameter(param_name))
