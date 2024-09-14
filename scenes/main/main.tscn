@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdlmqtdb87466"]
+[gd_scene load_steps=4 format=3 uid="uid://bdlmqtdb87466"]
 
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_3250c"]
 [ext_resource type="PackedScene" uid="uid://b34g5s1yqes5k" path="res://scenes/water/water.tscn" id="1_t83b2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_p6p0i"]
+font_size = 48
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_3250c")
 
 [node name="Water" parent="." instance=ExtResource("1_t83b2")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS: "
+label_settings = SubResource("LabelSettings_p6p0i")
