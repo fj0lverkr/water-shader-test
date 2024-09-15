@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjus42htcqye"]
+[gd_scene load_steps=5 format=3 uid="uid://bjus42htcqye"]
 
 [ext_resource type="Texture2D" uid="uid://t2k433un2j7d" path="res://assets/textures/lawn-1417835_640.png" id="1_881ab"]
 [ext_resource type="Shader" path="res://assets/shaders/grass.gdshader" id="1_rgavy"]
+[ext_resource type="Script" path="res://scenes/grass/grass.gd" id="3_vtl43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sbvkw"]
 shader = ExtResource("1_rgavy")
+shader_parameter/replacement_color = Color(0.542722, 0.837184, 0.98399, 1)
 
 [node name="Grass" type="Sprite2D"]
 material = SubResource("ShaderMaterial_sbvkw")
 texture = ExtResource("1_881ab")
+script = ExtResource("3_vtl43")

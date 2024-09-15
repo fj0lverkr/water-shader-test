@@ -20,6 +20,35 @@ offset_bottom = 23.0
 text = "FPS: "
 label_settings = SubResource("LabelSettings_p6p0i")
 
-[node name="Grass" parent="." instance=ExtResource("3_d58ff")]
+[node name="Grasses" type="Node" parent="."]
+
+[node name="Grass" parent="Grasses" instance=ExtResource("3_d58ff")]
 position = Vector2(200, 577)
 scale = Vector2(0.25, 0.25)
+
+[node name="Grass2" parent="Grasses" instance=ExtResource("3_d58ff")]
+position = Vector2(274, 574)
+scale = Vector2(0.25, 0.25)
+flip_h = true
+
+[node name="Grass3" parent="Grasses" instance=ExtResource("3_d58ff")]
+position = Vector2(352, 573)
+scale = Vector2(0.25, 0.25)
+
+[node name="Grass4" parent="Grasses" instance=ExtResource("3_d58ff")]
+position = Vector2(429, 574)
+scale = Vector2(0.25, 0.25)
+flip_h = true
+
+[node name="ColorPicker" type="ColorPicker" parent="."]
+offset_left = 841.0
+offset_top = 2.0
+offset_right = 1147.0
+offset_bottom = 647.0
+edit_alpha = false
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+presets_visible = false
+
+[connection signal="color_changed" from="ColorPicker" to="." method="_on_color_picker_color_changed"]
