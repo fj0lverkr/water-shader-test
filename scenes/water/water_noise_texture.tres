@@ -6,4 +6,5 @@ noise_type = 3
 [resource]
 width = 1174
 height = 660
+seamless = true
 noise = SubResource("FastNoiseLite_hvlcv")

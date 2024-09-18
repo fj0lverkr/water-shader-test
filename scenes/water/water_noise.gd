@@ -64,6 +64,7 @@ func _setup_noise() -> void:
 	noise_texture.height = texture.get_height() * scale.y
 	print("w:%s h:%s" % [noise_texture.width, noise_texture.height])
 	noise_texture.noise = FastNoiseLite.new()
+	noise_texture.seamless = true
 	await texture.changed
 	material.set_shader_parameter(NOISE, noise_texture)
 
@@ -73,4 +74,6 @@ func _resize_noise() -> void:
 	noise_texture.width = texture.get_width() * scale.x
 	noise_texture.height = texture.get_height() * scale.y
 	print("w:%s h:%s" % [noise_texture.width, noise_texture.height])
-	#material.set_shader_parameter(NOISE, noise_texture)
+	noise_texture.seamless = true
+	await texture.changed
+	material.set_shader_parameter(NOISE, noise_texture)
