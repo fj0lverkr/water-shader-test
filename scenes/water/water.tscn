@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b34g5s1yqes5k"]
+[gd_scene load_steps=5 format=3 uid="uid://b34g5s1yqes5k"]
 
 [ext_resource type="Script" path="res://scenes/water/water.gd" id="1_8qwi1"]
-[ext_resource type="Texture2D" uid="uid://bfusduwcxbjqq" path="res://assets/textures/clear-sea-water-128x128.png" id="2_jp5fx"]
-[ext_resource type="Material" uid="uid://dw7v8w3o1grbg" path="res://assets/shaders/water_shader_material.tres" id="2_uy6sh"]
+[ext_resource type="Material" uid="uid://owwei4j1h5dq" path="res://assets/shaders/procedural_water_shader_material.tres" id="2_5or77"]
 
-[node name="Water" type="Sprite2D"]
-material = ExtResource("2_uy6sh")
-position = Vector2(574, 322.5)
-scale = Vector2(9.17188, 5.16406)
-texture = ExtResource("2_jp5fx")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hmyex"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ld7pu"]
+noise = SubResource("FastNoiseLite_hmyex")
+
+[node name="Water" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2, 1.5)
 script = ExtResource("1_8qwi1")
 
-[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("2_5or77")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_ld7pu")

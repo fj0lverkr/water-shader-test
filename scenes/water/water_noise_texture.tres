@@ -1,10 +1,8 @@
 [gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://drxdgrrqso4e6"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hvlcv"]
-noise_type = 3
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fcg1k"]
+metadata/_preview_in_3d_space_ = true
 
 [resource]
-width = 1174
-height = 660
 seamless = true
-noise = SubResource("FastNoiseLite_hvlcv")
+noise = SubResource("FastNoiseLite_fcg1k")

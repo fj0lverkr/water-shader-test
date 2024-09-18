@@ -14,9 +14,19 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_3250c")
 
 [node name="Water" parent="." instance=ExtResource("1_t83b2")]
-visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 592.0
+offset_top = 311.0
+offset_right = 592.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.92525, 1.445)
 
 [node name="WaterNoise" parent="." instance=ExtResource("3_6seo1")]
+visible = false
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

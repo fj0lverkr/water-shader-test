@@ -39,19 +39,18 @@ var time_scale: Vector2 = Vector2(1.0, 1.0):
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		export_value_changed.connect(_on_export_value_changed)
-		_resize_noise()
 	else:
 		material.set_shader_parameter(AMP, amplitude)
 		material.set_shader_parameter(TILING, tiled_factor)
 		material.set_shader_parameter(OFFSET, offset_factor)
 		material.set_shader_parameter(TIME, time_scale)
 
-		_setup_noise()
+	_setup_noise()
 
 
 func _on_item_rect_changed() -> void:
 	material.set_shader_parameter(RATIO, scale.y / scale.x)
-	_resize_noise()
+	_setup_noise()
 
 
 func _on_export_value_changed(param_name: String, value: Vector2) -> void:
@@ -59,21 +58,11 @@ func _on_export_value_changed(param_name: String, value: Vector2) -> void:
 
 
 func _setup_noise() -> void:
-	var noise_texture = NoiseTexture2D.new()
-	noise_texture.width = texture.get_width() * scale.x
-	noise_texture.height = texture.get_height() * scale.y
+	var noise_texture: NoiseTexture2D = NoiseTexture2D.new()
+	noise_texture.width = int(texture.get_width() * scale.x)
+	noise_texture.height = int(texture.get_height() * scale.y)
 	print("w:%s h:%s" % [noise_texture.width, noise_texture.height])
 	noise_texture.noise = FastNoiseLite.new()
-	noise_texture.seamless = true
-	await texture.changed
-	material.set_shader_parameter(NOISE, noise_texture)
-
-
-func _resize_noise() -> void:
-	var noise_texture: Texture2D = material.get_shader_parameter(NOISE)
-	noise_texture.width = texture.get_width() * scale.x
-	noise_texture.height = texture.get_height() * scale.y
-	print("w:%s h:%s" % [noise_texture.width, noise_texture.height])
 	noise_texture.seamless = true
 	await texture.changed
 	material.set_shader_parameter(NOISE, noise_texture)
