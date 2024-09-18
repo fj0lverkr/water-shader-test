@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdlmqtdb87466"]
+[gd_scene load_steps=6 format=3 uid="uid://bdlmqtdb87466"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_3250c"]
 [ext_resource type="PackedScene" uid="uid://b34g5s1yqes5k" path="res://scenes/water/water.tscn" id="1_t83b2"]
+[ext_resource type="PackedScene" uid="uid://bt3ociuearoap" path="res://scenes/water/water_noise.tscn" id="3_6seo1"]
 [ext_resource type="PackedScene" uid="uid://bjus42htcqye" path="res://scenes/grass/grass.tscn" id="3_d58ff"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6p0i"]
@@ -13,6 +14,9 @@ outline_color = Color(0, 0, 0, 1)
 script = ExtResource("1_3250c")
 
 [node name="Water" parent="." instance=ExtResource("1_t83b2")]
+visible = false
+
+[node name="WaterNoise" parent="." instance=ExtResource("3_6seo1")]
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

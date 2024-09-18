@@ -1,0 +1,9 @@
+[gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://drxdgrrqso4e6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hvlcv"]
+noise_type = 3
+
+[resource]
+width = 1174
+height = 660
+noise = SubResource("FastNoiseLite_hvlcv")

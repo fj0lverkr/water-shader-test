@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt3ociuearoap"]
+
+[ext_resource type="Material" uid="uid://dw7v8w3o1grbg" path="res://assets/shaders/water_shader_material.tres" id="1_pevyr"]
+[ext_resource type="Texture2D" uid="uid://bfusduwcxbjqq" path="res://assets/textures/clear-sea-water-128x128.png" id="2_70xf5"]
+[ext_resource type="Script" path="res://scenes/water/water_noise.gd" id="3_cl0v4"]
+
+[node name="WaterNoise" type="Sprite2D"]
+material = ExtResource("1_pevyr")
+position = Vector2(574, 322.5)
+scale = Vector2(9.17188, 5.16406)
+texture = ExtResource("2_70xf5")
+script = ExtResource("3_cl0v4")
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
